@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div align="center">
+		<svg width="800" height=400>
+			<path id="a" d="" stroke-dasharray="1, 2"stroke="black" fill="white"></path>
+			<path id="bc" d="" stroke-dasharray="1, 2" stroke="black" fill="white"></path>
+			<path id="ab" d="" stroke-dasharray="1, 2" stroke="black" fill="white"></path>
+			<path id="ac" d="" stroke-dasharray="1, 2" stroke="black" fill="white"></path>
+
+			<g id="point_a">
+			<text id="a_text" dx=10 dy=30></text>
+			<circle  cx=0 cy=0 fill="white" stroke="black" r=8></circle>
+			</g>
+			<g id="point_b">
+			<text id="b_text" dx=10 dy=30></text>
+			<circle  cx=0 cy=0 fill="white" stroke="black" r=8></circle>
+			</g>
+			<g id="point_c">
+			<text id="c_text" dx=10 dy=30></text>
+			<circle  cx=0 cy=0 fill="white" stroke="black" r=8></circle>
+			</g>
+<G id="point_d">
+  <Text id="text_d" dx="0" dy="0"></Text>
+  <Circle cx="0" cy="0" fill="" stroke="" r="0"></Circle>
+</G>
+		</svg>
+	<svg id="simple" width=800 height=400>
+		<path d="M20 20 L800 20" stroke="black" stroke-dasharray="1, 2"></path>
+		<path id="line-move" d="" stroke="blue"></path>
+		<g id="circle-move" transform="translate(50, 50)">
+			<circle cx=20 cy=20 fill="white" stroke="black" r=8></circle>
+			<text  x=20 y=20 dx=10 dy=30 >
+				<tspan class="p01"></tspan>
+			</text>
+		</g>
+		<circle cx=50 cy=350 fill="white" stroke="black" r=8></circle>
+		<text  x=50 y=350 dx=10 dy=30 >Original Point(50,350)</text>
+
+		<g id="div-line" transform="">
+			<text   dx=10 dy=30 >
+				<tspan class="b01"></tspan>
+			</text>
+		</g>
+	</svg>
+	</div>
+
+	<script src="move.js"></script>
+</body>
+</html>
