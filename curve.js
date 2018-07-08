@@ -1,9 +1,16 @@
 var curve = document.getElementById("curve");
 var point_d = document.getElementById("point_d");
+var point_e = document.getElementById("point_e");
 var point_a = document.getElementById("point_a");
+var point_b = document.getElementById("point_b");
+var point_c = document.getElementById("point_c");
 var point_p = document.getElementById("point_p");
 
+var ab = document.getElementById("ab");
+var bc = document.getElementById("bc");
+var ac = document.getElementById("ac");
 var ad = document.getElementById("ad");
+var de = document.getElementById("de");
 var pd = document.getElementById("pd");
 
 var t = 0;
@@ -14,6 +21,12 @@ var b = new Victor(400, 400);
 var c = new Victor(500, 200);
 
 point_a.setAttribute("transform", translate(a.x,a.y));
+point_b.setAttribute("transform", translate(b.x,b.y));
+point_c.setAttribute("transform", translate(c.x,c.y));
+
+ab.setAttribute("d", path_line(a.x,a.y,b.x,b.y));
+bc.setAttribute("d", path_line(b.x,b.y,c.x,c.y));
+ac.setAttribute("d", path_line(a.x,a.y,c.x,c.y));
 
 function next(){
 	t += dt;
@@ -28,8 +41,10 @@ function next(){
 		var p = d.clone().multiplyScalar(1-t).add(e.clone().multiplyScalar(t));
 		curve.setAttribute("d", path_curve(a.x,a.y,d.x,d.y,p.x,p.y));
 		point_d.setAttribute("transform", translate(d.x,d.y));
+		point_e.setAttribute("transform", translate(e.x,e.y));
 		point_p.setAttribute("transform", translate(p.x,p.y));
 		ad.setAttribute("d", path_line(a.x,a.y,d.x,d.y));
+		de.setAttribute("d", path_line(d.x,d.y,e.x,e.y));
 		pd.setAttribute("d", path_line(d.x,d.y,p.x,p.y));
 	})(Math.abs( Math.sin(t) ));
 
