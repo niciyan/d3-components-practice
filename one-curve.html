@@ -3,12 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<script src="./node_modules/victor/index.js"></script>
 </head>
 <body>
 	<svg height=800 width=800>
 		<path id=curve d="" stroke="black" fill="none"></path>
+		<path id=ad d="" stroke="black" fill="none" stroke-dasharray="1, 2"></path>
+		<path id=pd d="" stroke="black" fill="none"></path>
+
+		<g id="point_a">
+		  <text id="text_a" dx="20" dy="0">A</text>
+		  <circle cx="0" cy="0" fill="" stroke="" r="8"></circle>
+		</g>
+		<g id="point_d">
+		  <text id="text_d" dx="20" dy="-20">D</text>
+		  <circle cx="0" cy="0" fill="" stroke="" r="8"></circle>
+		</g>
+		<g id="point_p">
+		  <text id="text_p" dx="20" dy="-20">P</text>
+		  <circle cx="0" cy="0" fill="" stroke="" r="8"></circle>
+		</g>
 	</svg>
 
 	<script type="text/javascript" src="curve.js"> </script>
 </body>
+
 </html>
