@@ -1,0 +1,22 @@
+{
+  "name": "d3-interpolate-try",
+  "version": "1.0.0",
+  "description": "practice of [ d3.js ](https://d3js.org/)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niciyan/d3-components-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niciyan/d3-components-practice/issues"
+  },
+  "homepage": "https://github.com/niciyan/d3-components-practice#readme",
+  "dependencies": {
+    "victor": "^1.1.0"
+  }
+}
