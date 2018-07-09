@@ -9,12 +9,35 @@ var b1 = items.querySelector(".b01");
 var x_orig = 50;
 var y_orig = 350;
 
+function rad(angle){
+	return angle/180*Math.PI;
+}
+
+var svg = d3.select('#simple');
+
+for ( i=0;i<360;i+=30 ){
+	theta = rad(i);
+	x = 20+300*( Math.cos(theta)+1 );
+	y = 20+100*( Math.sin(theta)+1 );
+	svg.append("path")
+		.attr("d", path_line(320,120,x,y))
+		.attr("stroke", "black")
+		.attr("stroke-dasharray", "1, 3");
+	svg.append("circle")
+		.attr("cx", x)
+		.attr("cy", y)
+		.attr("r", 6)
+		.attr("stroke", "black")
+		.attr("stroke-dasharray", "1, 2")
+		.attr("fill", "none");
+}
+
 (
  function next() {
 	 t += dt;
-	 if ( t > 8 ) {
-		 t = 0;
-	 }
+	 // if ( t > 6.3 ) {
+		 // return;
+	 // }
 
 	 x = 300 * ( Math.cos(t) + 1);
 	 y = 100 * ( Math.sin(t) + 1);

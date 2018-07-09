@@ -28,6 +28,16 @@ ab.setAttribute("d", path_line(a.x,a.y,b.x,b.y));
 bc.setAttribute("d", path_line(b.x,b.y,c.x,c.y));
 ac.setAttribute("d", path_line(a.x,a.y,c.x,c.y));
 
+var svg = d3.select("svg")
+for(i=0;i<1;i+=0.05){
+	var d = a.clone().multiplyScalar(1-i).add(c.clone().multiplyScalar(i));
+	var e = b.clone().multiplyScalar(i).add(c.clone().multiplyScalar(1-i));
+	svg.append("path")
+		.attr("d", path_line(d.x,d.y,e.x,e.y))
+		.attr('stroke', "black")
+		.attr("stroke-dasharray", "1, 3");
+}
+
 function next(){
 	t += dt;
 	
