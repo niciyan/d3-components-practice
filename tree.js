@@ -58,3 +58,7 @@ function translate(x,y){
 function path_curve3(x0,y0,x1,y1,x2,y2,x3,y3){
 	return "M"+x0+" "+y0+" C"+x1+" "+y1+" "+x2+" "+y2+" "+x3+" "+y3;
 }
+
+var svg2 = d3.select("body")
+    .append("svg")
+    .attr("viewbox", "0 0 600 600");
