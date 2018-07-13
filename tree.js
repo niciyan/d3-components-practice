@@ -41,7 +41,7 @@ var link = svg.selectAll().data(root.descendants().slice(1))
 
 var node = svg.selectAll().data(root.descendants())
 	.enter().append("g")
-	.attr("transform", function(d){ return translate(d.x,d.y) })
+	.attr("transform", function(d){ return translate(d.x,d.y) });
 
 node.append("circle")
 	.attr("stroke", "black")
