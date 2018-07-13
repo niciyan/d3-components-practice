@@ -11,9 +11,10 @@ var family = [
 { name:"Roger",   parent:"Goke",  value:6  },
 { name:"Federer", parent:"Goke",  value:6  },
 { name:"Rafael",  parent:"Goke",  value:6  },
-{ name:"Zeke",    parent:"Yuzu",  value:130 },
+{ name:"Zeke",    parent:"Yuzu",  value:13 },
 ]
 
+var rgbfunc = d3.interpolateRgb("red", "yellow");
 
 var svg = d3.select("body")
     .append("svg")
@@ -33,6 +34,7 @@ var root = stratify(family)
 	.sort(function(a,b){ return a.id.localeCompare(b.id) });
 
 pack(root);
+var max = root.r;
 
 var g = svg.append("g")
 	.attr("transform", "translate(0,50)");
@@ -51,7 +53,9 @@ var node = g.selectAll().data(root.descendants())
 
 node.append("circle")
 	.attr("stroke", "black")
-	.attr("fill", "none")
+    .attr("fill", function(d){
+        return rgbfunc(d.r/max);
+    })
 	.attr("r", function(d){ return d.r; });
 
 node.filter(function(d){ return !d.children; }).append("text")
