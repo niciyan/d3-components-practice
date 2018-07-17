@@ -7,6 +7,19 @@ var a = new Victor(700, 600);
 var c = new Victor(650, 100);
 var d = new Victor(200, 100);
 
+q1 = svg.append("path")
+    .attr("fill", "none")
+    .attr("d", path_curve(a,b,c))
+    .attr("stroke-width", 2)
+    .attr("stroke-dasharray", "1, 2")
+    .attr("stroke", "black");
+q2 = svg.append("path")
+    .attr("fill", "none")
+    .attr("d", path_curve(b,c,d))
+    .attr("stroke-width", 2)
+    .attr("stroke-dasharray", "1, 2")
+    .attr("stroke", "black");
+
 curve = svg.append("path")
             .attr("fill", "none")
             .attr("stroke-width", "4")
@@ -93,8 +106,8 @@ function path_curve3(vec1,vec2,vec3,vec4){
 	return "M"+vec1.x+" "+vec1.y+" C"+vec2.x+" "+vec2.y+" "+vec3.x+" "+vec3.y+" "+vec4.x+" "+vec4.y;
 }
 
-function path_curve(x0,y0,x1,y1,x2,y2){
-	return "M"+x0+" "+y0+" Q"+x1+" "+y1+" "+x2+" "+y2;
+function path_curve(vec1,vec2,vec3){
+	return "M"+vec1.x+" "+vec1.y+" Q"+vec2.x+" "+vec2.y+" "+vec3.x+" "+vec3.y;
 }
 function translate(x,y){
 	return "translate("+x+","+y+")";
